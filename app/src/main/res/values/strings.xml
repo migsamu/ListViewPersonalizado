@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ListViewPersonalizado</string>
+    <string name="tv_titulo">Tarjetas gráficas:</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="nvidia">Logo nvidia</string>
+    <string name="btn_volver">Volver</string>
+</resources>
