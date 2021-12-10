@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_datos.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/list_view_custom.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/list_view_default.xml" value="0.35572916666666665" />
       </map>
     </option>

@@ -8,20 +8,26 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView lvGraficas;
-    private List<String> seleccionGraficas = new ArrayList<>();
+    private Map<String, Integer> seleccionGraficas = new HashMap<>();
     private int contador60;
     private int contador70;
     private int contador80;
     private int contadorTi;
 
     protected static final String GRAFICAS = "org.iesfm.listviewpersonalizado.graficas";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,22 +58,27 @@ public class MainActivity extends AppCompatActivity {
         lvGraficas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Ha seleccionado" + lvGraficas.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
                 switch (position) {
                     case 0:
                         contador60++;
-                        seleccionGraficas.add("rtx 3060 x" + contador60);
+                        seleccionGraficas.put("rtx 3060", contador60);
+
                         break;
                     case 1:
                         contador70++;
-                        seleccionGraficas.add("rtx 3070 x" + contador60);
+                        seleccionGraficas.put("rtx 3070", contador70);
+
                         break;
                     case 2:
                         contador80++;
-                        seleccionGraficas.add("rtx 3080 x" + contador60);
+                        seleccionGraficas.put("rtx 3080", contador80);
+
                         break;
                     case 3:
                         contadorTi++;
-                        seleccionGraficas.add("rtx 3080ti x" + contador60);
+                        seleccionGraficas.put("rtx 3080ti", contadorTi);
+
                         break;
                 }
             }
@@ -79,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
         Intent datos = new Intent(this, Datos.class);
         datos.putExtra(GRAFICAS, seleccionGraficas.toString());
+
+
         startActivity(datos);
     }
 }

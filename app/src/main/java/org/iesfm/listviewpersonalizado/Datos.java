@@ -9,8 +9,9 @@ import android.widget.TextView;
 
 public class Datos extends AppCompatActivity {
 
-    public String seleccion;
-    public TextView datos;
+    private String seleccion;
+
+    private TextView datos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,9 @@ public class Datos extends AppCompatActivity {
         Intent main = getIntent();
         seleccion = main.getStringExtra(MainActivity.GRAFICAS);
         datos = (TextView) findViewById(R.id.tvDatos);
+        seleccion.replace("{","");
         datos.setText(seleccion);
+
     }
 
     public void volver(View v) {
